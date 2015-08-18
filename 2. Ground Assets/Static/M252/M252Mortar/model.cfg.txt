@@ -1,0 +1,52 @@
+class CfgSkeletons
+{
+	class StaticWeapon;
+	class 81Mortar: StaticWeapon
+	{
+		isDiscrete = 1;
+		skeletonInherit = "Default";
+		skeletonBones[]=
+		{
+			"otocVez","",
+			"otochlaven","otocVez",
+		};
+	};
+};
+class CfgModels
+{
+	class StaticWeapon;
+	class 81Mortar: StaticWeapon
+	{
+		sections[]={};
+		skeletonName="81Mortar";
+		sectionsInherit = "Default";
+		class Animations
+		{
+			class MainTurret
+			{
+				type="rotationY";
+				source="mainTurret";
+				selection="otocVez";
+				axis="osaVeze";
+				animPeriod=0;
+				minValue="rad -360";
+				maxValue="rad +360";
+				angle0="rad -360";
+				angle1="rad +360";
+			};
+			class MainGun
+			{
+				type="rotationX";
+				source="mainGun";
+				selection="otochlaven";
+				axis="osahlaven";
+				animPeriod=0;
+				minValue="rad -360";
+				maxValue="rad +360";
+				angle0="rad -360";
+				angle1="rad +360";
+			};
+		};
+	};
+};
+

@@ -1,0 +1,19 @@
+////////////////////////////////////////////////////////////////////
+//DeRap: Produced from mikero's Dos Tools Dll version 4.76
+//Wed Nov 19 05:53:49 2014 : Source 'file' date Wed Nov 19 05:53:49 2014
+//http://dev-heaven.net/projects/list_files/mikero-pbodll
+////////////////////////////////////////////////////////////////////
+
+#define _ARMA_
+
+//Class P:/MV-22B/data/ah1z_rotor_blur.rvmat{
+ambient[] = {1.0,1.0,1.0,1.0};
+diffuse[] = {1.0,1.0,1.0,1.0};
+forcedDiffuse[] = {0.0,0.0,0.0,0.0};
+emmisive[] = {0.0,0.0,0.0,0.0};
+specular[] = {0.0,0.0,0.0,0.0};
+specularPower = 1.0;
+renderFlags[] = {"NoAlphaWrite"};
+PixelShaderID = "Normal";
+VertexShaderID = "Basic";
+//};

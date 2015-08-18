@@ -1,0 +1,776 @@
+class CfgSkeletons
+{
+	class Default
+	{
+		isDiscrete = 1;
+		skeletonInherit = ;
+		skeletonBones[] = {};
+	};
+	class MV22Skeleton: Default
+	{
+		isDiscrete=0;
+		skeletonInherit=;
+		skeletonBones[]=
+		{
+			altB_1,
+			,
+			altR_1,
+			,
+			flapx,
+			,
+			gearx,
+			,
+			vario_3,
+			,
+			vario_1,
+			,
+			engine_3,
+			,
+			alt_3,
+			,
+			mph_3,
+			,
+			mph_1,
+			,
+			kompas_3,
+			,
+			kompas_4,
+			,
+			horizont_3,
+			,
+                         wing,
+                         ,
+			engine_1,
+			wing,
+			rpm_1,
+			,
+			rpm_2,
+			,
+			fuel_1,
+			,
+			fuel_2,
+			,
+			engine_1_prop,
+			engine_1,
+			engine_2,
+			wing,
+			engine_2_prop,
+			engine_2,
+                         engine_prop_1_1a,
+			engine_1_prop,
+                         engine_prop_1_1b,
+			engine_prop_1_1a,
+                         engine_prop_1_2a,
+			engine_1_prop,
+                         engine_prop_1_2b,
+			engine_prop_1_2a,
+                         engine_prop_1_3a,
+			engine_1_prop,
+                         engine_prop_1_3b,
+			engine_prop_1_3a,
+                         engine_prop_2_1a,
+			engine_2_prop,
+                         engine_prop_2_1b,
+			engine_prop_2_1a,
+                         engine_prop_2_2a,
+			engine_2_prop,
+                         engine_prop_2_2b,
+			engine_prop_2_2a,
+                         engine_prop_2_3a,
+                         engine_2_prop,
+                         engine_prop_2_3b,
+			engine_prop_2_3a,
+			flap_1,
+			wing,
+			flap_2,
+			wing,
+			elevator,
+			,
+			rudder_1,
+			,
+			rudder_2,
+			,
+			gear_1_1,
+			,
+			gear_2_1,
+			,
+			gear_2_2,
+			,
+			gear_1_1_damper,
+			gear_1_1,
+			gear_2_1_damper,
+			gear_2_1,
+			gear_2_2_damper,
+			gear_2_2,
+			gear_1_1_stabil,
+			gear_1_1_damper,
+			gear_2_1_stabil,
+			gear_2_1_damper,
+			gear_2_2_stabil,
+			gear_2_2_damper,
+			wheel_1_1,
+			gear_1_1_damper,
+			wheel_2_1,
+			gear_2_1_damper,
+			wheel_2_2,
+			gear_2_2_damper,
+			hatch_1_1,
+			,
+			hatch_1_2,
+			,
+			hatch_2_1,
+			,
+			hatch_2_2,
+			,
+			hatch_3_1,
+			,
+			hatch_3_2,
+			,
+			door1_top,
+			,
+			door1_bottom,
+			,
+			ramp_top,
+			,
+			ramp_bottom,
+			,
+			display_off,
+			,
+			probe,
+			,
+			MainTurret,,
+			MainGun,MainTurret,	
+			'
+			
+		};
+	};
+};
+class Rotation;
+class CfgModels
+{
+
+	class Default
+	{
+		sections[] = {};
+		sectionsInherit=;
+		skeletonName = ;
+	};
+	class MV22:Default
+	{
+		skeletonName=MV22Skeleton;
+		sectionsInherit=;
+		sections[]=
+		{
+			engine_blur,
+			engine_static
+		};
+		class Animations
+		{
+	        class damageHide
+	        {
+	            type=hide;
+	            source=damage;
+	            selection=damageHide;
+	        };
+			
+			class probe
+			{
+				type=translation;
+				source=probe;
+				selection=probe;
+				axis=axis_probe_mem;
+				memory=1;
+				minValue=0.000000;
+				maxValue=1;
+				offset0=0;
+				offset1=15.5;
+			};	
+
+			class MainTurret
+			{
+				type=rotation;
+				source=mainturret;
+				selection=MainTurret;
+				axis=MainTurret_axis;
+				animPeriod=0;
+				minValue=rad -360;
+				maxValue=rad +360;
+				angle0=rad -360;
+				angle1=rad +360;
+			};
+			
+			class door_1_top: Rotation
+			{
+				type=Rotation;
+				source=user;
+				selection=door1_top;
+				axis=door1_top_axis;
+				angle1=1.221730;
+                angle0=;				
+			};
+			
+			class door_2_top
+			{
+				type=translation;
+				source=user;
+				selection=door1_top;
+                begin=doortop_axis_X_beg; 
+                end=doortop_axis_X_end; 
+				minValue=0;
+				maxValue=1.893;
+				offset0=0;
+				offset1=1.893;					
+			};
+			
+			class door_1_bottom: Rotation
+			{
+				type=rotation;
+				source=user;
+				selection=door1_bottom;
+				axis=door1_bottom_axis;
+				minValue=0.200000;
+				angle1=-2.356194;
+			};			
+			
+			class MainGun: MainTurret
+			{
+				type=rotation;
+				source=MainGun;
+				selection=MainGun;
+				axis=MainGun_axis;
+			};			
+			
+			class display_on: Rotation
+			{
+				type=hide;
+				source=rpm;
+				selection=display_off;
+				minValue=-0.5;
+				maxValue=0.5;
+				hidevalue=0.9;
+				sourceAddress=clamp;
+			};
+			class IndicatorFlaps: Rotation
+			{
+				type=translation;
+				source=flap;
+				selection=flapx;
+				axis=gearx_axis;
+				memory=1;
+				minValue=0.000000;
+				maxValue=0.500000;
+				offset0=-10.000000;
+				offset1=0.000000;
+			};
+			class IndicatorGear: Rotation
+			{
+				type=translation;
+				source=gear;
+				selection=gearx;
+				axis=gearx_axis;
+				memory=1;
+				minValue=0.000000;
+				maxValue=1.000000;
+				offset0= 0.000000;
+				offset1=-10.000000;
+			};
+			class kompas_3: Rotation
+			{
+				type = rotation;
+				source=direction;
+				selection=kompas_3;
+				memory=0;
+				axis=kompas_3_axis;
+				minValue=-3.141593;
+				maxValue=3.141593;
+				angle0=0;
+				angle1=+rad 360;
+			};
+			class kompas_4: kompas_3
+			{
+				selection=kompas_4;
+				axis=kompas_4_axis;
+				angle0=0;
+				angle1=-rad 360;
+			};
+			class HorizonDive
+			{
+				type=rotationX;
+				source=horizondive;
+				selection=horizont_3;
+				axis=horizont_3_axis;
+				memory=0;
+				minValue=rad -90;
+				maxValue=rad 90;
+				angle0=-1.570796;
+				angle1=1.570796;
+			};
+			class HorizonBank
+			{
+				type=rotation;
+				source=horizonBank;
+				selection=horizont_3;
+				axis=HorizontBank_3_axis;
+				memory=0;
+				minValue=-6.283190;
+				maxValue=6.283190;
+				angle0=-6.283185;
+				angle1=6.283185;
+			};
+			class IndicatorSpeed3: Rotation
+			{
+				type = rotation;
+				source=speed;
+				selection=mph_3;
+				axis=alt_3_axis;
+				memory=1;
+				minValue=-18.750000600405;
+				maxValue=112.500000600405;
+				angle0=-0.3270001.609344;
+				angle1=1.9634951.609344;
+			};
+			class IndicatorSpeed1: Rotation
+			{
+				type = rotation;
+				source=speed;
+				selection=mph_1;
+				axis=mph_1_axis;
+				memory=1;
+				minValue=0;
+				maxValue=210;
+				angle0=0;
+				angle1=3.665000;
+			};
+			class IndicatorRPM1: Rotation
+			{
+				type = rotation;
+				source=rpm;
+				selection=rpm_1;
+				axis=rpm_1_axis;
+				memory=0;
+				minValue=0;
+				maxValue=1;
+				angle0=0;
+				angle1=3.665000;
+			};
+			class IndicatorRPM2: IndicatorRPM1
+			{
+				source=rpm;
+				selection=rpm_2;
+				axis=rpm_2_axis;
+				memory=0;
+				minValue=0;
+				maxValue=1;
+				angle0=0;
+				angle1=3.665000;
+			};
+			class IndicatorAltRadar3: Rotation
+			{
+				type = rotation;
+				source=altRadar;
+				selection=alt_3;
+				axis=alt_3_axis;
+				minValue=0.000000;
+				maxValue=10000.000000;
+				angle0=0.000000;
+				angle1=4.320000;
+			};
+			class IndicatorAltRadar1: IndicatorAltRadar3
+			{
+				source=altRadar;
+				selection=altr_1;
+				axis=altr_1_axis;
+				angle0=0.000000;
+				angle1=3.665000;
+			};
+			class IndicatorAltBaro1: Rotation
+			{
+				type = rotation;
+				source=altBaro;
+				selection=altb_1;
+				axis=altb_1_axis;
+				minValue=0.000000;
+				maxValue=10000.000000;
+				angle0=0.000000;
+				angle1=3.665000;
+			};
+			class IndicatorVertSpeed3: Rotation
+			{
+				type = rotation;
+				source=vertSpeed;
+				selection=vario_3;
+				axis=vario_3_axis;
+				memory=0;
+				minValue=-60.000000;
+				maxValue=60.000000;
+				angle0=0.506000;
+				angle1=-0.506000;
+			};
+			class IndicatorVertSpeed1: IndicatorVertSpeed3
+			{
+				selection=vario_1;
+				axis=vario_1_axis;
+				memory=0;
+				minValue=-60.000000;
+				maxValue=60.000000;
+				angle0=2.268928;
+				angle1=-2.268928;
+			};
+			class IndicatorFuel1: Rotation
+			{
+				type = rotation;
+				source=fuel;
+				selection=fuel_1;
+				axis=fuel_1_axis;
+				memory=0;
+				minValue=0;
+				maxValue=1;
+				angle0=0;
+				angle1=3.665000;
+			};
+			class IndicatorFuel2: IndicatorFuel1
+			{
+				selection=fuel_2;
+				axis=fuel_2_axis;
+			};
+			class Flap_1: Rotation
+			{
+				type = rotation;
+				source=flap;
+				selection=flap_1;
+				axis=flap_1_axis;
+				angle1=rad 75;
+			};
+			class Flap_2: Flap_1
+			{
+				selection=flap_2;
+				axis=flap_2_axis;
+				angle1=rad -75;
+			};
+			class ElevatorFL: Rotation
+			{
+				type = rotation;
+				source=elevator;
+				selection=elevator;
+				axis=elevator_axis;
+				minValue=-1;
+				maxValue=1;
+				angle0=rad -14;
+				angle1=rad 14;
+			};
+			class RudderL: Rotation
+			{
+				type = rotation;
+				source=rudder;
+				selection=rudder_1;
+				axis=rudder_1_axis;
+				minValue=-1;
+				maxValue=1;
+				angle0=rad 22.9;
+				angle1=rad -22.9;
+			};
+			class RudderR: RudderL
+			{
+				selection=rudder_2;
+				axis=rudder_2_axis;
+			};
+			class Engine_1: Rotation
+			{
+				type = rotation;
+				source=thrustVector;
+				selection=engine_1;
+				axis=engine_1_axis;
+				minValue=0.000000;
+				maxValue=1.00000;
+				angle1=0.000000;
+				angle0=1.570796;
+			};
+			class Engine_2: Engine_1
+			{
+				selection=engine_2;
+				axis=engine_2_axis;
+				angle1=0.000000;
+				angle0=-1.570796;
+			};
+			class Engine_3: Engine_1
+			{
+				source=thrustVector;
+				selection=engine_3;
+				axis=engine_3_axis;
+				angle1=1.570796;
+			};
+			class Rotor_1: Rotation
+			{
+				type = rotation;
+				source=rotor;
+				selection=engine_1_prop;
+				axis=engine_1_prop_axis;
+				angle1=rad -360;
+			};
+			class Rotor_2: Rotor_1
+			{
+				type = rotation;
+				selection=engine_2_prop;
+				axis=engine_2_prop_axis;
+				angle1=rad 360;
+			};
+			class Gear_1_1_Steering
+			{
+				type=rotationY;
+				source=rudder;
+				selection=gear_1_1;
+				axis=gear_1_1_steering_axis;
+				memory=1;
+				minValue=-9;
+				maxValue=9;
+				angle0=rad -45;
+				angle1=rad +45;
+			};
+			class Gear_1_1: Rotation
+			{
+				type = rotation;
+				source=gear;
+				selection=gear_1_1;
+				axis=gear_1_1_axis;
+				maxValue=0.700000;
+				angle1=rad -90;
+			};
+			class Gear_2_1: Gear_1_1
+			{	type = rotation;
+				selection=gear_2_1;
+				axis=gear_2_1_axis;
+				minValue=0.200000;
+				maxValue=0.800000;
+			};
+			class Gear_2_2: Gear_2_1
+			{	type = rotation;
+				selection=gear_2_2;
+				axis=gear_2_2_axis;
+				angle1=rad 90;
+			};
+			class Gear_1_1_Damper
+			{
+				type=translation;
+				source=altRadar;
+				selection=gear_1_1_damper;
+				axis=gear_2_1_damper_axis;
+				memory=1;
+				minValue=4.300000;
+				maxValue=4.500000;
+				angle0=-0.500000;
+				angle1=0;
+				offset0=-0.500000;
+				offset1=0;
+			};
+			class Gear_2_1_Damper: Gear_1_1_Damper
+			{
+				selection=gear_2_1_damper;
+				maxValue=4.600000;
+
+				angle0=-1.500000;
+				offset0=-1.500000;
+			};
+			class Gear_2_2_Damper: Gear_2_1_Damper
+			{
+				selection=gear_2_2_damper;
+			};
+			class Gear_1_1_Stabil: Gear_1_1_Damper
+			{
+				type=rotation;
+				selection=gear_1_1_stabil;
+				axis=gear_1_1_stabil_axis;
+				angle0=0;
+				angle1=rad -20;
+			};
+			class Gear_2_1_Stabil: Gear_2_1_Damper
+			{
+				type=rotation;
+				selection=gear_2_1_stabil;
+				axis=gear_2_1_stabil_axis;
+				angle0=0;
+				angle1=rad -20;
+			};
+			class Gear_2_2_Stabil: Gear_2_1_Stabil
+			{
+				selection=gear_2_2_stabil;
+			};
+			class Wheel_1_1
+			{
+				type=rotationX;
+				source=wheel;
+				selection=wheel_1_1;
+				axis=;
+				memory=1;
+				sourceAddress=loop;
+				minValue=0;
+				maxValue=1;
+				angle0=0;
+				angle1=rad -180;
+			};
+			class Wheel_2_1: Wheel_1_1
+			{
+				selection=wheel_2_1;
+				axis=wheel_2_1_axis;
+				angle1=rad -160;
+			};
+			class Wheel_2_2: Wheel_2_1
+			{
+				selection=wheel_2_2;
+				axis=wheel_2_2_axis;
+			};
+			class Hatch_1_1: Rotation
+			{	
+				type = rotation;
+				source=gear;
+				selection=hatch_1_1;
+				axis=hatch_1_1_axis;
+				minValue=0.700000;
+				maxValue=1;
+				angle0=rad 90;
+				angle1=0;
+			};
+			class Hatch_1_2: Hatch_1_1
+			{
+				type = rotation;
+				selection=hatch_1_2;
+				axis=hatch_1_2_axis;
+				angle0=rad -90;
+				angle1=;
+			};
+			class Hatch_2_1: Hatch_1_1
+			{	
+				type = rotation;
+				sourceAddress=mirror;
+				selection=hatch_2_1;
+				axis=hatch_2_1_axis;
+				minValue=0;
+				maxValue=0.500000;
+				angle0=0;
+				angle1=rad 90;
+			};
+			class Hatch_2_2: Hatch_2_1
+			{
+				type = rotation;
+				selection=hatch_2_2;
+				axis=hatch_2_2_axis;
+				angle1=rad -90;
+				angle0=;
+			};
+			class Hatch_3_1: Hatch_1_1
+			{
+				type = rotation;
+				selection=hatch_3_1;
+				axis=hatch_3_1_axis;
+				angle0=-1.570796;
+				angle1=0.000000;
+			};
+			class Hatch_3_2: Hatch_3_1
+			{
+				type = rotation;
+				selection=hatch_3_2;
+				axis=hatch_3_2_axis;
+				angle0=rad 90;
+			};
+			class door1_top: Rotation
+			{
+
+				type=rotation;
+				source=door_1_1;
+				selection=door1_top;
+				axis=door1_top_axis;
+				angle1=1.221730;
+				angle0=;
+			};
+			class door1_bottom: Rotation
+			{
+				type=rotation;
+				source=door_1_1;
+				selection=door1_bottom;
+				axis=door1_bottom_axis;
+				minValue=0.200000;
+				angle1=-2.356194;
+				angle0=;
+			};
+			class ramp_bottom: Rotation
+			{
+				type=rotation;
+				source=user;
+				selection=ramp_bottom;
+				axis=ramp_bottom_axis;
+				minValue=0.200000;
+				angle1=-0.708132;
+			};
+			class ramp_top: Rotation
+			{
+				type=rotation;
+				source=user;
+				selection=ramp_top;
+				axis=ramp_top_axis;
+				minValue=0.200000;
+				angle1=0.436332;
+			};
+			class pack_engine_1: Rotation
+			{
+				type=rotation;
+				source=pack_engine_1;
+				selection=engine_1;
+				axis=engine_1_axis;
+				minValue=0.200000;
+				maxValue=0.400000;
+				angle1=903.141562653180;
+			};
+			class pack_engine_2: pack_engine_1
+			{
+				type=rotation;
+				selection=engine_2;
+				source=pack_engine_2;
+				axis=engine_2_axis;
+				angle1=-903.141562653180;
+			};
+			class turn_wing: pack_engine_1
+			{
+				type=rotation;
+				source=turn_wing;
+				selection=wing;
+				axis=wing_axis;
+				minValue=0.400000;
+				maxValue=1.00000;
+				angle1=903.141562653180;
+			};			
+			#define ENGINE_PROP_TURN(x,y) class engine_prop_##x##_##y##_turn\
+			{\
+				type=Rotation;\
+				source=engine_prop_##x##_##y##_turn;\
+				selection=engine_prop_##x##_##y##a;\
+				axis=axis_prop_##x##_##y##;\
+				minValue=0.000000;\
+				maxValue=0.100000;\
+				angle1=66.6 3.141562653180;\
+				{\
+					ENGINE_PROP_TURN(1,1);\
+					ENGINE_PROP_TURN(1,2);\
+					ENGINE_PROP_TURN(1,3);\
+					ENGINE_PROP_TURN(2,1);\
+					ENGINE_PROP_TURN(2,2);\
+					ENGINE_PROP_TURN(2,3);\
+				};\
+			};
+			#define ENGINE_PROP_CLOSE(x,y) class engine_prop_##x##_##y##_close\
+			{\
+				type=Rotation;\
+				source=engine_prop_##x##_##y##_close;\
+				selection=engine_prop_##x##_##y##b;\
+				axis=engine_prop_##x##_##y##_axis;\
+				minValue=0.100000;\
+				maxValue=0.200000;\
+				angle1=1253.141562653180; \
+			    {\
+					ENGINE_PROP_CLOSE(1,1);\
+					ENGINE_PROP_CLOSE(1,3);\
+					ENGINE_PROP_CLOSE(2,1);\
+					ENGINE_PROP_CLOSE(2,2);\
+				};\
+			};
+		};
+	};
+};

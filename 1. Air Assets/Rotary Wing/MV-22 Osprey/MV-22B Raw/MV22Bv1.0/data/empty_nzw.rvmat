@@ -1,0 +1,11 @@
+////////////////////////////////////////////////////////////////////
+//DeRap: Produced from mikero's Dos Tools Dll version 4.49
+//Fri Nov 07 09:16:43 2014 : Source 'file' date Fri Nov 07 09:16:43 2014
+//http://dev-heaven.net/projects/list_files/mikero-pbodll
+////////////////////////////////////////////////////////////////////
+
+#define _ARMA_
+
+//Class P:/MV22B/data/empty_nzw.rvmat{
+renderFlags[] = {"NoZWrite"};
+//};

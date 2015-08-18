@@ -1,0 +1,21 @@
+HMH-465
+
+FLIR pod 
+Telescopic refuel
+fuel tanks droppable
+optional tail gun
+belly compartment-scroll option[scroll option for Crew Chief]
+position you could jump to to look in the belly[scroll option for Crew Chief]
+fully foldable landing gear
+back ramp
+taxi option
+fast rope+sling 
+green Left, right red, belly strobe, tail strobr
+headlights
+foldable tail and rotors
+optional middle row(other variant)
+LAV is the heaviest vehicle it can carry
+fully 3D cockpit
+cargo load/drop[new feature with A3]
+windshield wipers
+custom sounds

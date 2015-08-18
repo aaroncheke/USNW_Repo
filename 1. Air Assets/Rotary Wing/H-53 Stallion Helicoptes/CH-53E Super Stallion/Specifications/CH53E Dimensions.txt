@@ -1,0 +1,13 @@
+Total Lenght: 79Ft
+Total Width: 
+Total Height: 27ft 9in
+
+Frame Lenght: 79Ft
+Frame Width: 
+Frame Height:
+
+Rotor diameter: 79 ft
+Rotor Blade:
+Rotor Hub Diameter: 
+Main Rotor Blades: 7
+Tail Rotor Blades: 4

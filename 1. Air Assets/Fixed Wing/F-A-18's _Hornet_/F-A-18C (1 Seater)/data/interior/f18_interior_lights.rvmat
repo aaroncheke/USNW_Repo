@@ -1,0 +1,18 @@
+////////////////////////////////////////////////////////////////////
+//DeRap: Produced from mikero's Dos Tools Dll version 3.77
+//http://dev-heaven.net/projects/list_files/mikero-pbodll
+////////////////////////////////////////////////////////////////////
+
+#define _ARMA_
+
+//Class F2F_air : f18\f18_interior_lights.rvmat{
+ambient[] = {0.5,0.5,0.5,1.0};
+diffuse[] = {0.0,0.0,0.0,1.0};
+forcedDiffuse[] = {0.1,0.1,0.1,0.0};
+emmisive[] = {0.0,0.1,0.0,1.0};
+specular[] = {0.0,0.0,0.0,0.0};
+specularPower = 0.0;
+PixelShaderID = "Normal";
+VertexShaderID = "Basic";
+renderFlags[] = {"NoTiWrite"};
+//};
